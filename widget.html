@@ -1,0 +1,26 @@
+<script type="text/javascript">
+
+var c = document.createElement('div');
+c.id="catalog"
+var cat="";
+var shop_id="8847";
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://seller.pokupo.ru/api/goods/'+shop_id+'/search/', true);
+
+xhr.onload = function() {
+
+    document.body.appendChild(c);
+    data = JSON.parse(this.responseText);
+
+    for(var i=1; i<data.length; i++)
+    {
+        cat+="<div style='text-align:center; vertical-align:top; display:inline-block; margin:50px;'>" +data[i]['chort_name'] + "<p><img src='" +data[i]['route_image'] +"' max-height='150' width='100' /></p><br/>"+ data[i]['sell_cost'] +"&nbsp;руб.<br/><br/><a href='https://pokupo.ru/payment/"+shop_id+"/payment#//idGoods="+data[i]['id']+"&count=1' target='_blank'><button >Купить</button></a></div>";
+    }
+
+    document.getElementById("catalog").innerHTML = cat;
+}
+
+xhr.send();
+
+</script>
