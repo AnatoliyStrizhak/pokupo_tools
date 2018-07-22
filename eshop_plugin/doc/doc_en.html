@@ -1,0 +1,55 @@
+<h1>Installation instructions for the Pokupo module for CMS ECSHOP</h1>
+
+<p>
+1. Using ftp or any other method, copy the /includes/modules/payment/pokupo.php file from the archive to a similar CMS directory
+</p>
+
+<p>
+2. If you made a fresh installation of ECSHOP, you can simply copy the file respond.php from the archive to the CMS root directory; 
+if you already have a customized system, you can simply add the fragment responsible for the work of the module 
+from the attached respond.php file to the existing one. The required fragment is highlighted with comments.
+</p>
+
+<p>
+3. Go to the System Setup / Payment section. Find the Pokupo module in the list of available payment modules and click Install
+</p>
+
+<img src="./0.jpg" />
+
+<p>
+
+
+4. Specify in the "Shop ID for CMS" settings of your store in the Pokupo system.
+You can find this ID in the control panel of the seller https://dashboard.pokupo.ru
+Also specify the password for notifications.
+
+</p>
+
+
+<img src="./1.jpg" />
+
+
+<p>
+5. Next, you need to set "Url for notifications" in the settings of the store (dashboard-> shops-> settings-> notifications)
+<br/>Example: http://mysite.com/respond.php?code=pokupo
+
+</p>
+
+<img src="./2.jpg" />
+
+
+<p>
+Here you also need to enter the password for notifications that you set up in the previous step when installing the module in the ECSHOP admin panel.
+Also, set the site notification method. It is recommended to select the POST mode.
+</p>
+
+
+<p>6. And this is the end of configuration process. In the future, when placing an order, the user will be offered a Pokupo payment method,
+choosing which, he will be redirected at Pokupo merchant to pay for the order.
+</p>
+
+<img src="./3.jpg" /><br/>
+<img src="./4.jpg" />
+
+
+

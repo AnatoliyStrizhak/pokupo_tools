@@ -33,6 +33,7 @@ final class PicoPokupo extends AbstractPicoPlugin
     {
         // Search for all [shop_id] shortcodes over the content
         preg_match_all( '#\[pkp_shop_[0-9]*?\]#s', $twigVariables['content'], $shop_matches );
+
         preg_match_all( '#\[pkp_good_[0-9]*?\]#s', $twigVariables['content'], $good_matches );
 
         $style="<style type='text/css'>
@@ -99,7 +100,7 @@ final class PicoPokupo extends AbstractPicoPlugin
 	            <img src="'.$value['route_image'].'" height="120" alt="'.$value["full_name"].'" /></a><br/>
 	            <strong>'.$value["chort_name"].'</strong>
                     <div id="click">Цена:'.$value["sell_cost"].'руб.&nbsp;&nbsp;
-                        <a href="https://pokupo.ru/payment/'.$shop_id.'/payment#//idGoods='.$value["id"].'&count=1"><strong style="font-size:14px; color:red;">Купить</strong></a>
+                        <a href="https://pokupo.ru/payment/'.$value["id_shop"].'/payment#//idGoods='.$value["id"].'&count=1"><strong style="font-size:14px; color:red;">Купить</strong></a>
                     </div>
 	        </div>';
 
